@@ -1,5 +1,5 @@
-from supervised_learning.svm_primal import SVMPrimal
-from sklearn.datasets import make_blobs, make_moons
+from supervised_learning.svm.svm_primal import SVMPrimal
+from sklearn.datasets import make_blobs
 import matplotlib.pyplot as plt
 from misc.plot_functions import plot_decision
 import numpy as np
@@ -20,7 +20,7 @@ def main():
     model.fit(X, y)
 
 
-    plot_decision(model, X, y, "SVM Primal", "x", "y")
+    plot_decision(model, X, y, "SVM Primal", "X0", "X1")
 
 if __name__ == "__main__":
     main();

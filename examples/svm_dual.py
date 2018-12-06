@@ -1,6 +1,5 @@
-from supervised_learning.svm_dual import SVMDual, RBFKernel
-from sklearn.datasets import make_blobs, make_moons
-import matplotlib.pyplot as plt
+from supervised_learning.svm.svm_dual import SVMDual, RBFKernel
+from sklearn.datasets import make_blobs
 from misc.plot_functions import plot_decision
 import numpy as np
 
@@ -18,7 +17,7 @@ def main():
     y = y.astype(float);
     model.fit(X, y)
 
-    plot_decision(model, X, y, "SVM Dual", "x", "y")
+    plot_decision(model, X, y, "SVM Dual", "X0", "X1")
 
 if __name__ == "__main__":
     main();
