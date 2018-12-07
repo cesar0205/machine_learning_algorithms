@@ -1,4 +1,4 @@
-from supervised_learning.trees.basic_trees import RegressionTree
+from supervised_learning.trees.random_forests import RandomForestRegressor
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -21,13 +21,13 @@ def main():
     y_train = y[train_ind]
     y_test = y[test_ind]
 
-    model = RegressionTree()
+    model = RandomForestRegressor()
     model.fit(X_train, y_train)
     print("Test score: ", model.score(X_test, y_test))
     plt.plot(X, y)
     pred = model.predict(X.reshape(T, 1))
     plt.plot(X, pred, 'o')
-    plt.title("Regression tree. Fitting the sin(x) function")
+    plt.title("Random forest regressor. Fitting the sin(x) function")
     plt.xlabel("x")
     plt.ylabel("y")
     plt.show()
